@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+    description: Spring Cloud Contract Verifier Http Server OA3 Sample
+    version: "1.0.0"
+    title: Fraud Service API
+paths:
+    /fraudcheck:
+        put:
+            summary: Perform Fraud Check
+            x-contracts:
+            - contractId: 1
+              name: Should Mark Client as Fraud
+              priority: 1
+            - contractId: 2
+              name: Should Not Mark Client as Fraud
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                "client.id":
+                                    type: integer
+                                loanAmount:
+                                    type: integer
+                x-contracts:
+                - contractId: 1
+                  body:
+                      "client.id": 1234567890
+                      loanAmount: 99999
+                  matchers:
+                      body:
+                      - path: $.['client.id']
+                        type: by_regex
+                        value: "[0-9]{10}"
+                - contractId: 2
+                  body:
+                      "client.id": 1234567890
+                      loanAmount: 123.123
+                  matchers:
+                      body:
+                      - path: $.['client.id']
+                        type: by_regex
+                        value: "[0-9]{10}"
+            responses:
+                '200':
+                    description: created ok
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    fraudCheckStatus:
+                                        type: string
+                                    "rejection.reason":
+                                        type: string
+                    x-contracts:
+                    - contractId: 1
+                      body:
+                          fraudCheckStatus: "FRAUD"
+                          "rejection.reason": "Amount too high"
+                      headers:
+                          Content-Type: application/json;charset=UTF-8
+                    - contractId: 2
+                      body:
+                          fraudCheckStatus: "OK"
+                          "rejection.reason": null
+                      headers:
+                          Content-Type: application/json;charset=UTF-8
+                      matchers:
+                          body:
+                          - path: $.['rejection.reason']
+                            type: by_command
+                            value: assertThatRejectionReasonIsNull($it)
+    /frauds:
+        get:
+            x-contracts:
+            - contractId: 3
+              name: should return all frauds - should count all frauds
+            responses:
+                '200':
+                    description: okay
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    count:
+                                        type: integer
+                    x-contracts:
+                    - contractId: 3
+                      body:
+                          count: 200
+    /drunks:
+        get:
+            x-contracts:
+            - contractId: 6
+              name: drunk frauds
+            responses:
+                '200':
+                    description: okay
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    count:
+                                        type: integer
+                    x-contracts:
+                    - contractId: 6
+                      body:
+                          count: 100

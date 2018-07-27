@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+    description: Spring Cloud Contract Verifier Http Server OA3 Sample
+    version: "1.0.0"
+    title: Fraud Name Service API
+paths:
+    /frauds/name:
+        put:
+            x-contracts:
+            - contractId: 4
+              name: Should Return a Fraud for the Name
+              priority: 1
+            - contractId: 5
+              name: Should Return Non-Fraud for the Name
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                x-contracts:
+                - contractId: 4
+                  body:
+                      name: "fraud"
+                - contractId: 5
+                  body:
+                      name: "non fraud"
+                  matchers:
+                      body:
+                      - path: $.name
+                        type: by_regex
+                        predefined: only_alpha_unicode
+            responses:
+                '200':
+                    description: okay
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    type: object
+                                    properties:
+                                        name:
+                                            type: string
+                    x-contracts:
+                    - contractId: 4
+                      body:
+                        result: "Sorry {{{ jsonpath this '$.name' }}} but you're a fraud"
+                      headers:
+                        Content-Type: "{{{ request.headers.Content-Type.0 }}};charset=UTF-8"
+                    - contractId: 5
+                      body:
+                        result: "Don't worry {{{ jsonpath this '$.name' }}} you're not a fraud"
+                      headers:
+                        Content-Type: "{{{ request.headers.Content-Type.0 }}};charset=UTF-8"
+

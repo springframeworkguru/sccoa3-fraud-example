@@ -22,7 +22,8 @@
 		<java.version>1.8</java.version>
 		<spring-cloud-dependencies.version>Finchley.BUILD-SNAPSHOT</spring-cloud-dependencies.version>
 		<spring-cloud-contract.version>2.0.1.RELEASE</spring-cloud-contract.version>
-		<scc-oa3-version>2.0.1.RELEASE</scc-oa3-version>	</properties>
+		<scc-oa3-version>2.0.1.RELEASE</scc-oa3-version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -20,9 +20,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 // tag::autoconfigure_stubrunner[]
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.NONE)
-@AutoConfigureStubRunner(ids = {"com.example:http-server-yml:+:stubs:6569"},
+@AutoConfigureStubRunner(ids = {"com.example:oa3-http-server:+:stubs:6569"},
 		stubsMode = StubRunnerProperties.StubsMode.LOCAL)
-@DirtiesContext
+//@DirtiesContext
 public class LoanApplicationServiceTests {
 // end::autoconfigure_stubrunner[]
 

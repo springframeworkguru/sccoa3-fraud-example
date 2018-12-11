@@ -13,16 +13,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<version>2.1.0.RELEASE</version>
 		<relativePath />
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud-dependencies.version>Finchley.BUILD-SNAPSHOT</spring-cloud-dependencies.version>
-		<spring-cloud-contract.version>2.0.1.RELEASE</spring-cloud-contract.version>
-		<scc-oa3-version>2.0.1.RELEASE</scc-oa3-version>
+		<spring-cloud-dependencies.version>2.0.3.RELEASE</spring-cloud-dependencies.version>
+		<spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
+		<spring-cloud-release.version>Greenwich.BUILD-SNAPSHOT</spring-cloud-release.version>
+		<scc-oa3-version>2.0.2.BUILD-SNAPSHOT</scc-oa3-version>
 	</properties>
 
 	<dependencies>
@@ -61,7 +62,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud-dependencies.version}</version>
+				<version>${spring-cloud-release.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

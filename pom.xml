@@ -25,8 +25,8 @@
     </developers>
 
     <properties>
-        <spring-cloud-contract.version>2.0.1.RELEASE</spring-cloud-contract.version>
-        <scc-oa3-version>2.0.1.RELEASE</scc-oa3-version>
+        <spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
+        <scc-oa3-version>2.0.2.BUILD-SNAPSHOT</scc-oa3-version>
     </properties>
 
     <modules>

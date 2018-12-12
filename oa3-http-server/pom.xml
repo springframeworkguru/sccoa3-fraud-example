@@ -23,7 +23,7 @@
 		<spring-cloud-dependencies.version>2.0.3.RELEASE</spring-cloud-dependencies.version>
 		<spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
 		<spring-cloud-release.version>Greenwich.BUILD-SNAPSHOT</spring-cloud-release.version>
-		<scc-oa3-version>2.0.2.BUILD-SNAPSHOT</scc-oa3-version>
+		<scc-oa3-version>2.0.2.2</scc-oa3-version>
 	</properties>
 
 	<dependencies>

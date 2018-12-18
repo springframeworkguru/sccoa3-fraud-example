@@ -22,7 +22,7 @@
 		<java.version>1.8</java.version>
 		<spring-cloud-dependencies.version>Greenwich.BUILD-SNAPSHOT</spring-cloud-dependencies.version>
 		<spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
-		<scc-oa3-version>2.0.2.3</scc-oa3-version>
+		<scc-oa3-version>2.0.2.6</scc-oa3-version>
 	</properties>
 	<dependencies>
 		<dependency>

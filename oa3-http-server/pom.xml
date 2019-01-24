@@ -20,10 +20,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud-dependencies.version>2.0.3.RELEASE</spring-cloud-dependencies.version>
 		<spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
-		<spring-cloud-release.version>Greenwich.BUILD-SNAPSHOT</spring-cloud-release.version>
-		<scc-oa3-version>2.0.2.6</scc-oa3-version>
+		<scc-oa3-version>2.0.2.8</scc-oa3-version>
 	</properties>
 
 	<dependencies>
@@ -45,6 +43,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<version>${spring-cloud-contract.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -57,17 +56,6 @@
 
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud-release.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>

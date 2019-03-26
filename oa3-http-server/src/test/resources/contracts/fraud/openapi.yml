@@ -25,6 +25,8 @@ paths:
                                     type: integer
                 x-contracts:
                 - contractId: 1
+                  headers:
+                      Content-Type: application/json
                   body:
                       "client.id": 1234567890
                       loanAmount: 99999
@@ -34,6 +36,8 @@ paths:
                         type: by_regex
                         value: "[0-9]{10}"
                 - contractId: 2
+                  headers:
+                      Content-Type: application/json
                   body:
                       "client.id": 1234567890
                       loanAmount: 123.123
@@ -64,7 +68,7 @@ paths:
                     - contractId: 2
                       body:
                           fraudCheckStatus: "OK"
-                          "rejection.reason": null
+                          "rejection.reason": 'null'
                       headers:
                           Content-Type: application/json;charset=UTF-8
                       matchers:
@@ -92,7 +96,7 @@ paths:
                       body:
                           count: 200
                       headers:
-                          Content-Type: "application/json;charset=UTF-8"
+                          Content-Type: application/json;charset=UTF-8
     /drunks:
         get:
             x-contracts:
@@ -113,4 +117,4 @@ paths:
                       body:
                           count: 100
                       headers:
-                          Content-Type: "application/json;charset=UTF-8"
+                          Content-Type: application/json;charset=UTF-8

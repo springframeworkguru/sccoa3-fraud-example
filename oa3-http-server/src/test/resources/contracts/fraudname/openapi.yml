@@ -22,9 +22,13 @@ paths:
                                     type: string
                 x-contracts:
                 - contractId: 4
+                  headers:
+                      Content-Type: application/json
                   body:
                       name: "fraud"
                 - contractId: 5
+                  headers:
+                      Content-Type: application/json
                   body:
                       name: "non fraud"
                   matchers:

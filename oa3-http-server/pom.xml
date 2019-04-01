@@ -21,7 +21,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud-contract.version>2.1.1.RELEASE</spring-cloud-contract.version>
-		<scc-oa3-version>2.1.1.0</scc-oa3-version>
+		<scc-oa3-version>2.1.1.1</scc-oa3-version>
 	</properties>
 
 	<dependencies>

@@ -68,7 +68,7 @@ paths:
                     - contractId: 2
                       body:
                           fraudCheckStatus: "OK"
-                          "rejection.reason": 'null'
+                          "rejection.reason": null
                       headers:
                           Content-Type: application/json;charset=UTF-8
                       matchers:

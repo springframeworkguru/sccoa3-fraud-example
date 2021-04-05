@@ -20,7 +20,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
-		<spring-cloud-contract.version>3.0.1</spring-cloud-contract.version>
+		<spring-cloud-contract.version>3.0.2</spring-cloud-contract.version>
 		<scc-oa3-version>2.1.2.1-SNAPSHOT</scc-oa3-version>
 	</properties>
 	<dependencies>

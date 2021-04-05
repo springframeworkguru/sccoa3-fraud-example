@@ -1,8 +1,7 @@
 package com.example.fraud;
 
-import org.junit.Before;
-
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import org.junit.jupiter.api.BeforeEach;
 
 public class FraudnameBase {
 
@@ -10,7 +9,7 @@ public class FraudnameBase {
 
 	FraudVerifier fraudVerifier = FRAUD_NAME::equals;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		RestAssuredMockMvc.standaloneSetup(new FraudNameController(this.fraudVerifier));
 	}

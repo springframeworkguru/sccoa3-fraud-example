@@ -64,13 +64,13 @@ paths:
                           fraudCheckStatus: "FRAUD"
                           "rejection.reason": "Amount too high"
                       headers:
-                          Content-Type: application/json;charset=UTF-8
+                          Content-Type: application/json
                     - contractId: 2
                       body:
                           fraudCheckStatus: "OK"
                           "rejection.reason": null
                       headers:
-                          Content-Type: application/json;charset=UTF-8
+                          Content-Type: application/json
                       matchers:
                           body:
                           - path: $.['rejection.reason']
@@ -96,7 +96,7 @@ paths:
                       body:
                           count: 200
                       headers:
-                          Content-Type: application/json;charset=UTF-8
+                          Content-Type: application/json
     /drunks:
         get:
             x-contracts:
@@ -117,4 +117,4 @@ paths:
                       body:
                           count: 100
                       headers:
-                          Content-Type: application/json;charset=UTF-8
+                          Content-Type: application/json
